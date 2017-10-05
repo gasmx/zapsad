@@ -1,0 +1,13 @@
+{
+  "manifest_version": 2,
+  "name": "ZapSad",
+  "version": "0.1",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://web.whatsapp.com/*"
+      ],
+      "js": ["jquery.js", "app.js"]
+    }
+  ]
+}
