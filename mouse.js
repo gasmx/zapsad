@@ -18,7 +18,7 @@ var width = screenSize.width;
 
 const WebSocket = require('ws');
 
-const ws = new WebSocket('wss://echo.websocket.org');
+const ws = new WebSocket('ws://34.212.9.57:5000');
 
 ws.on('open', function open() {
     console.log('ws connected');
@@ -37,6 +37,10 @@ ws.on('message', function incoming(data) {
 
         if (json.type == 'mouse-click') {
             robot.mouseClick();
+        }
+
+        if (json.type == 'keyboard-input') {
+            robot.typeString(json.text);
         }
 
     } catch(err) {
